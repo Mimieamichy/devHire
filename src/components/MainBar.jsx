@@ -1,6 +1,7 @@
+
 import React from "react";
 
-export default function MainBar({ backgroundImage, avater, name, fee }) {
+export default function MainBar({backgroundImage, avater, name, fee }){
   const style = {
     backgroundImage: `url(${backgroundImage})`,
     width: "200px",
@@ -41,7 +42,7 @@ export default function MainBar({ backgroundImage, avater, name, fee }) {
             <p className="fees">{fee}$</p>
           </div>
           <div className="hire">
-            <p>Hire</p>
+           <a href=""> <p>Hire</p></a>
           </div>
         </div>
       </div>

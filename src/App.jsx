@@ -1,7 +1,7 @@
-import React from "react";
+
 import SideBar from "./components/SideBar";
 import MainBarContent from "./components/MainBarContent";
-import Favourites from "./components/Favourites";
+//import Favourites from "./components/Favourites";
 
 export default function App() {
   return (

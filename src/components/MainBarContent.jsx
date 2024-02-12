@@ -1,4 +1,3 @@
-import React from "react";
 import { devInfo } from "../constants/data";
 import MainBar from "./MainBar";
 
@@ -8,7 +7,15 @@ export default function MainBarContent() {
       <h1>Hire Top Developers</h1>
       <div className="content">
         {devInfo.map((data) => {
-          return <MainBar key={data.id} {...data} />;
+          return (
+            <MainBar
+              key={data.id}
+              backgroundImage={data.backgroundImage}
+              avater={data.avater}
+              name={data.name}
+              fee={data.fee}
+            />
+          );
         })}
       </div>
     </div>
