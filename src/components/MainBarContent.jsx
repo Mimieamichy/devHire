@@ -7,15 +7,7 @@ export default function MainBarContent() {
       <h1>Hire Top Developers</h1>
       <div className="content">
         {devInfo.map((data) => {
-          return (
-            <MainBar
-              key={data.id}
-              backgroundImage={data.backgroundImage}
-              avater={data.avater}
-              name={data.name}
-              fee={data.fee}
-            />
-          );
+          return <MainBar key={data.id} devInfo={data} />;
         })}
       </div>
     </div>

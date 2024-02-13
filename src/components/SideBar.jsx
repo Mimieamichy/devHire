@@ -1,4 +1,6 @@
-
+import { Link } from "react-router-dom";
+//import MainBarContent from "./MainBarContent";
+//import Favourites from "./Favourites";
 
 export default function SideBar() {
   return (
@@ -10,18 +12,18 @@ export default function SideBar() {
         <div>
           <span className="items">
             <i className="fa-solid fa-magnifying-glass"></i>
-            <a href="#mainContent" target="parent">
+            <Link to="/">
               <h4>Home</h4>
-            </a>
+            </Link>
           </span>
         </div>
         <div>
           <span className="items">
             {" "}
             <i className="fa-regular fa-heart"></i>
-            <a href="#favorites" target="parent">
+            <Link to="/fahv">
               <h4>Favourites</h4>
-            </a>
+            </Link>
           </span>
         </div>
       </div>

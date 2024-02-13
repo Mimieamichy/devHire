@@ -1,9 +1,12 @@
+import React, { useEffect } from "react";
+import { useFahv, usehandleLike } from "./ContextFileApp";
 
-import React from "react";
+export default function MainBar({ devInfo }) {
+  const liked = useFahv();
+  const handleLiked = usehandleLike();
 
-export default function MainBar({backgroundImage, avater, name, fee }){
   const style = {
-    backgroundImage: `url(${backgroundImage})`,
+    backgroundImage: `url(${devInfo.backgroundImage})`,
     width: "200px",
     height: "120px",
     backgroundPosition: "center",
@@ -12,37 +15,42 @@ export default function MainBar({backgroundImage, avater, name, fee }){
     borderRadius: "8px",
   };
 
-  const [liked, setLiked] = React.useState(false);
-  const handleLiked = () => {
-    setLiked(!liked);
-  };
-
   return (
     <div className="box">
       <div className="top" style={style}>
         <div className="icon" style={{ cursor: "pointer" }}>
           <i
-            className={liked ? "fa-solid fa-heart" : "fa-regular fa-heart"}
-            onClick={handleLiked}
-            style={liked ? { color: "red" } : undefined}
+            className={
+              liked.has(devInfo) ? "fa-solid fa-heart" : "fa-regular fa-heart"
+            }
+            style={liked.has(devInfo) ? { color: "red" } : undefined}
+            onClick={() => handleLiked(devInfo)}
           ></i>
         </div>
       </div>
       <div className="bottom">
         <img
-          src={avater}
-          alt={name}
+          src={devInfo.avater}
+          alt={devInfo.name}
           width={40}
           height={40}
           className="avater"
         />
         <div className="bt">
           <div>
-            <p className="name">{name}</p>
-            <p className="fees">{fee}$</p>
+            <p className="name">{devInfo.name}</p>
+            <p className="fees">{devInfo.fee}$</p>
           </div>
           <div className="hire">
-           <a href=""> <p>Hire</p></a>
+            <a
+              href="#"
+              style={{
+                textDecoration: "none",
+              }}
+            >
+              {" "}
+              <p>Hire</p>
+            </a>
           </div>
         </div>
       </div>
